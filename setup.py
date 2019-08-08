@@ -14,6 +14,7 @@ Copyright 2013 Gustav Arngarden
    limitations under the License.
 """
 
+from __future__ import absolute_import
 from setuptools import setup, find_packages
 
 LONG_DESCRIPTION = None
@@ -44,6 +45,11 @@ setup(
     long_description=LONG_DESCRIPTION,
     classifiers=[
         'License :: OSI Approved :: Apache Software License',
+        'Programming Language :: Python',
+        'Programming Language :: Python :: 2',
+        'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.6',
     ],
     setup_requires=['pyandoc'],
     install_requires=['pymongo'],
