@@ -14,10 +14,12 @@ Copyright 2013 Gustav Arngarden
    limitations under the License.
 """
 
+from __future__ import absolute_import
 from functools import wraps
 import logging
 import pymongo
 import time
+from six.moves import range
 
 log = logging.getLogger(__name__)
 
@@ -48,7 +50,7 @@ def autoretry_read(wait=0.1, tries=5):
     def decorate(func):  # pylint: disable=missing-docstring
         @wraps(func)
         def wrapper(*args, **kwargs):  # pylint: disable=missing-docstring
-            for attempt in xrange(tries):
+            for attempt in range(tries):
                 try:
                     return func(*args, **kwargs)
                 except pymongo.errors.AutoReconnect:

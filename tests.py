@@ -2,6 +2,7 @@
 Tests for mongodb_proxy.
 """
 
+from __future__ import absolute_import
 import unittest
 
 from pymongo.errors import AutoReconnect

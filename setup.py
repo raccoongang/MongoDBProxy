@@ -14,6 +14,7 @@ Copyright 2013 Gustav Arngarden
    limitations under the License.
 """
 
+from __future__ import absolute_import
 from setuptools import setup, find_packages
 
 LONG_DESCRIPTION = None
