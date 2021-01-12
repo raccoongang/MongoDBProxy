@@ -14,12 +14,10 @@ Copyright 2013 Gustav Arngarden
    limitations under the License.
 """
 
-from __future__ import absolute_import
 from functools import wraps
 import logging
 import pymongo
 import time
-from six.moves import range
 
 log = logging.getLogger(__name__)
 
@@ -54,7 +52,7 @@ def autoretry_read(wait=0.1, tries=5):
                 try:
                     return func(*args, **kwargs)
                 except pymongo.errors.AutoReconnect:
-                    log.exception('Attempt {0}'.format(attempt))
+                    log.exception(f'Attempt {attempt}')
                     # Reraise if we failed on our last attempt
                     if attempt == tries - 1:
                         raise

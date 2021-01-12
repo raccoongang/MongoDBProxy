@@ -2,7 +2,6 @@
 Tests for mongodb_proxy.
 """
 
-from __future__ import absolute_import
 import unittest
 
 from pymongo.errors import AutoReconnect
@@ -52,7 +51,7 @@ class AutoretryReadDecoratorTestCase(unittest.TestCase):
         self.assertEqual(self.func_to_retry.call_count, 4)
 
 
-class MongoConnection(object):
+class MongoConnection:
     """Dummy object to test MongoProxy."""
 
     def __init__(self, exceptions_to_raise=None):
